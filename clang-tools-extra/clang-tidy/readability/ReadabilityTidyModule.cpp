@@ -38,6 +38,7 @@
 #include "MisplacedArrayIndexCheck.h"
 #include "NamedParameterCheck.h"
 #include "NonConstParameterCheck.h"
+#include "NoPartialArgumentWrappingCheck.h"
 #include "OperatorsRepresentationCheck.h"
 #include "QualifiedAutoCheck.h"
 #include "RedundantAccessSpecifiersCheck.h"
@@ -153,6 +154,8 @@ public:
         "readability-named-parameter");
     CheckFactories.registerCheck<NonConstParameterCheck>(
         "readability-non-const-parameter");
+    CheckFactories.registerCheck<NoPartialArgumentWrappingCheck>( // <--- ADDED HERE
+        "readability-no-partial-argument-wrapping");
     CheckFactories.registerCheck<RedundantControlFlowCheck>(
         "readability-redundant-control-flow");
     CheckFactories.registerCheck<RedundantDeclarationCheck>(
